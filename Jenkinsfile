@@ -11,7 +11,7 @@ pipeline {
     stage('QA') {
       steps {
         git 'https://github.com/HarinathAnnavarapu/Salesforce'
-        mail(subject: 'QA Phase mail', body: 'This is the stage where QA phase is taken place', from: 'haridece23@gmail.com', to: 'haridece23@gmail.com', replyTo: 'harinathannavarapu@gmail.com', cc: 'harinathannavarapu@gmail.com')
+        emailext(subject: 'QA Phase mail', body: 'This is the stage of the QA Phase taken place', attachLog: true, from: 'haridece23@gmail.com', to: 'harinathannavarapu@gmail.com', replyTo: 'harinathannavarapu@gmail.com')
       }
     }
 
